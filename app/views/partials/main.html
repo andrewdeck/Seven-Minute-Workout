@@ -1,0 +1,19 @@
+<!-- <div ng-include="'partials/navbar'"></div>
+ -->
+<div ng-controller="ExercisesCtrl">
+  <h1 ng-hide="timer" ng-click="toggleSpeed()" class="text-center">7 Minute Workout</h1>
+  <h1 ng-show="timer" ng-click="toggleSpeed()" class="text-center">{{currentExercise.name}}</h1>
+  <div class="row" style="padding: 0px 0px 15px 0px;">
+    <div ng-hide="timer" class="ng-hide col-xs-12 col-sm-4 col-sm-offset-4"><a class="btn btn-lg btn-success btn-block" ng-href="" ng-click="startWorkout()">Start</a></div>
+  </div>
+  <div ng-show="timer" class="progress">
+    <div class="progress-bar" style="width: {{overallProgress}}%;"></div>
+  </div>
+  <div ng-show="timer" class="progress">
+    <div class="progress-bar progress-bar-danger" style="width: {{currentExerciseProgress}}%;"></div>
+  </div>
+  <img ng-src="{{currentExercise.imageUrl}}" alt="{{currentExercise.name}}" style="width: 100%;" class="img-rounded"><br>
+  <div class="row" style="padding: 15px 0px 15px 0px;">
+    <div ng-show="timer" class="col-xs-12 col-sm-4 col-sm-offset-4"><a class="btn btn-lg btn-danger  btn-block" ng-href="" ng-click="endWorkout()">Stop</a></div>
+  </div>
+</div>
