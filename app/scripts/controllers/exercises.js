@@ -5,6 +5,13 @@ angular.module('HICTApp')
     $http.get('/api/exercises').success(function(exercises) {
       $scope.exercises = exercises;
       $scope.currentExercise = exercises[0];
+
+      // lets preload the images
+      var images = [];
+      for(var i=0,len = exercises.length; i<len; i++){
+        images[i] = new Image();
+        images[i].src = exercises[i].imageUrl;
+      }
     });
 
     var workoutBeggining, stepBegging, alternateAlertPlayed;
