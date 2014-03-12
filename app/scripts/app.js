@@ -4,6 +4,7 @@ angular.module('HICTApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ui.bootstrap',
   'ngRoute'
 ])
   .config(function ($routeProvider, $locationProvider) {

@@ -1,0 +1,30 @@
+<div class="modal-header text-center">
+  <h1 ng-hide="calendar">Congrats!</h1>
+  <h1 ng-show="calendar">Workout Week</h1>
+</div>
+<div class="modal-body">
+  <div ng-hide="calendar">
+    <a class="btn btn-lg btn-success btn-block" ng-href="" ng-click="done()">Done</a>
+    <a class="btn btn-lg btn-info btn-block" ng-href="" ng-click="again()">Again</a>
+  </div>
+  <div ng-show="calendar">
+    <div class="row">
+      <div class="calendar-container">
+        <div class="day text-center" ng-repeat="day in days">
+          <div class="day-box">
+            <div class="day-name">{{day.name}}</div>
+            <div class="rep-badge" ng-show="day.reps">
+              {{day.reps}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</div>
+<div class="modal-footer" ng-show="calendar">
+  <a class="btn btn-lg btn-info btn-block" ng-href="" ng-click="close()">Close</a>
+</div>
